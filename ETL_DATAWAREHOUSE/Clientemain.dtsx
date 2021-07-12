@@ -1,0 +1,336 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/8/2021 11:59:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SCAMBDE24"
+  DTS:CreatorName="GRUPOSIONBO\rcarrasco"
+  DTS:DTSID="{D23A088A-1491-4745-8EF3-2353CEDC46DE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="16394"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{E12A79A0-B8A6-4381-9570-8C03C3BC8C53}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.0.27.BDVentas_ER.xxx1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{02951CDB-F6B1-4908-A4EB-EB9CFB84A17F}"
+      DTS:ObjectName="192.168.0.27.BDVentas_ER.xxx1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.0.27;User ID=xxx;Initial Catalog=BDVentas_ER;Provider=SQLOLEDB.1;Application Name=SSIS-Package-{02951CDB-F6B1-4908-A4EB-EB9CFB84A17F}192.168.0.27.BDVentas_ER.xxx1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAky5SJJCMiUmFocObhsM6cwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABJKOL7SVySW+yENoFprfaxAAAAAASAAACgAAAAEAAAAC5zVBVp6fB2NJkVKG0OA0UQAAAAA7IxmtRaBTLeO58VbtOWshQAAABA9rMJ+zMQKZadyZNKL67SrQYnVw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.0.27.BD_DatawareHouse.xxx1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9CF7B2B5-A493-4AA0-8A32-0C96DD22FBD8}"
+      DTS:ObjectName="192.168.0.27.BD_DatawareHouse.xxx1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.0.27;User ID=xxx;Initial Catalog=BD_DatawareHouse;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package-{9CF7B2B5-A493-4AA0-8A32-0C96DD22FBD8}192.168.0.27.BD_DatawareHouse.xxx1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAky5SJJCMiUmFocObhsM6cwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAt7DEIp98HN6elB8oV3AeQAAAAAASAAACgAAAAEAAAAFzwZf0dKB6EE23+B/7dUksQAAAAFDHy1wxDwkYAj2NR7zWiwhQAAABMY0s/jmldZZPN6W8K5FTBfZcoIg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CREAR"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{25036216-DF4E-42FF-AE8A-40B35DA0C402}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CREAR"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9CF7B2B5-A493-4AA0-8A32-0C96DD22FBD8}"
+          SQLTask:SqlStatementSource="USE [BD_DatawareHouse]&#xA;GO&#xA;&#xA;&#xA;CREATE TABLE [dbo].[C_CLIENTE] (&#xA;&#x9;[idcliente] int not null primary key,&#xA;&#x9;[Nombre] varchar(500) NOT NULL,&#xA;&#x9;[Direccion] varchar(500) NOT NULL,&#xA;&#x9;[Telefono] varchar(50) NOT NULL,&#xA;&#x9;[Edad] int NOT NULL&#xA;) &#xA;&#xA;&#xA;GO&#xA;&#xA;/****** Object: Table [dbo].[STG_CLIENTE]   Script Date: 12/7/2021 15:22:43 ******/&#xA;USE [BD_DatawareHouse];&#xA;GO&#xA;SET ANSI_NULLS ON;&#xA;GO&#xA;SET QUOTED_IDENTIFIER ON;&#xA;GO&#xA;CREATE TABLE [dbo].[STG_CLIENTE] (&#xA;[idcliente] int NOT NULL,&#xA;[Nombre] varchar(500) NOT NULL,&#xA;[Direccion] varchar(500) NOT NULL,&#xA;[Telefono] varchar(50) NOT NULL,&#xA;[Edad] int NOT NULL)&#xA;ON [PRIMARY]&#xA;WITH (DATA_COMPRESSION = NONE);&#xA;GO&#xA;ALTER TABLE [dbo].[STG_CLIENTE] SET (LOCK_ESCALATION = TABLE);&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETL_C_CLIENTE"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{96F3479F-143E-431C-9623-6292B552B24F}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL_C_CLIENTE"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ETL_c_cliente.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETL_D_CLIENTE"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{78AC2779-2C2B-4882-BECE-69B69C0D748C}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL_D_CLIENTE"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ETL_D_CLIENTE.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETL_STG_CLIENTE"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{6F54B316-007F-4F09-B05E-51945DCA4ED4}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL_STG_CLIENTE"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ETL_STG_CLIENTE.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{271AD64D-C5F0-45A2-83DD-019A2436BBD2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9CF7B2B5-A493-4AA0-8A32-0C96DD22FBD8}"
+          SQLTask:SqlStatementSource="if exists (select * from INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='C_CLIENTE') &#xA;DROP TABLE DBO.C_CLIENTE&#xA;GO&#xA;if exists (select * from INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME ='STG_CLIENTE') &#xA;DROP TABLE DBO.STG_CLIENTE&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{971DDEB0-8984-4EBD-9477-E430D8BC1432}"
+      DTS:From="Package\Limpiar"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\CREAR" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{238287A4-5CD2-4142-B9EB-A42D0D271770}"
+      DTS:From="Package\CREAR"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\ETL_C_CLIENTE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F7BDBB7-E84E-4CC2-B8D5-BE091462A88A}"
+      DTS:From="Package\ETL_C_CLIENTE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\ETL_STG_CLIENTE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{35D6267C-2884-457E-85AB-6EC16A4A6C3B}"
+      DTS:From="Package\ETL_STG_CLIENTE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\ETL_D_CLIENTE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Limpiar"
+          TopLeft="774,123" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\CREAR"
+          TopLeft="550,119" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="774,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106,0"
+              Start="0,0"
+              End="-98.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-98.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\ETL_C_CLIENTE"
+          TopLeft="210,133" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="550,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174,14"
+              Start="0,0"
+              End="-166.5,14">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-83,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83,0"
+                    Point2="-87,0"
+                    Point3="-87,4" />
+                  <mssgle:LineSegment
+                    End="-87,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87,10"
+                    Point2="-87,14"
+                    Point3="-91,14" />
+                  <mssgle:LineSegment
+                    End="-166.5,14" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\ETL_STG_CLIENTE"
+          TopLeft="327,256" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\ETL_D_CLIENTE"
+          TopLeft="537,349" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="293,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,81"
+              Start="0,0"
+              End="124,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="4,40.5" />
+                  <mssgle:LineSegment
+                    End="120,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120,40.5"
+                    Point2="124,40.5"
+                    Point3="124,44.5" />
+                  <mssgle:LineSegment
+                    End="124,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="417,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="221.5,51"
+              Start="0,0"
+              End="221.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="4,25.5" />
+                  <mssgle:LineSegment
+                    End="217.5,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="217.5,25.5"
+                    Point2="221.5,25.5"
+                    Point3="221.5,29.5" />
+                  <mssgle:LineSegment
+                    End="221.5,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

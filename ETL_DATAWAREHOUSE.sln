@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ETL_DATAWAREHOUSE", "ETL_DATAWAREHOUSE\ETL_DATAWAREHOUSE.dtproj", "{1E5D465C-CA38-426D-A28F-983E5AE8FA3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E5D465C-CA38-426D-A28F-983E5AE8FA3F}.Development|Default.ActiveCfg = Development
+		{1E5D465C-CA38-426D-A28F-983E5AE8FA3F}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E47FFE32-DB0E-400B-A43D-BC5A13D95F1D}
+	EndGlobalSection
+EndGlobal

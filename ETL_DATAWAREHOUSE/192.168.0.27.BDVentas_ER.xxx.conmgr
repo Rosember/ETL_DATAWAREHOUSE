@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="192.168.0.27.BDVentas_ER.xxx"
+  DTS:DTSID="{71CBF850-7740-455F-BB83-4DDFC79D6D62}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=192.168.0.27;User ID=xxx;Initial Catalog=BDVentas_ER;Persist Security Info=True;Application Name=SSIS-ETL_DATAWAREHOUSE-{71CBF850-7740-455F-BB83-4DDFC79D6D62}192.168.0.27.BDVentas_ER.xxx;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAky5SJJCMiUmFocObhsM6cwAAAAACAAAAAAADZgAAwAAAABAAAADEk6PI7N6lbPRg7VQ4NMpHAAAAAASAAACgAAAAEAAAAH309VJwSbxd/aJrusN6F/F4AAAA0JXO8tBCV42rvvZcnrf8o9XfRF/a1Zi6WjyKakcB1QSgrHnvpOtcNQ31yHz3BfrrsIbV2kLxz+2VcafmN4sZspL+Xsd9CemXYJY7hqzk5xkud6oIRRGVSWTX1muTaQ5wOivnFhIzZG8GWJckvWChqFi2EOOX/vtvFAAAACTmehomY9ZTJzXkgbY1h9v9KHm/</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
