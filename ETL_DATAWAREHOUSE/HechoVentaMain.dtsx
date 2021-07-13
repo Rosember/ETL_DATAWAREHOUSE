@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="7/12/2021 1:18:09 PM"
+  DTS:CreationDate="7/12/2021 7:55:33 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SCAMBDE24"
   DTS:CreatorName="GRUPOSIONBO\rcarrasco"
-  DTS:DTSID="{E1A7EBB2-85C0-410B-B6F7-517C61024C74}"
+  DTS:DTSID="{EF754DA9-4C29-4722-84CD-C89E11C53589}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="16394"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{86D92BAC-6543-40BF-9319-6B6441EE0F7E}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{1E044F53-6A3F-43FB-9CED-89597058D098}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Tarea Flujo de datos"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{58B60146-5331-406E-A679-7A39320C01D1}"
+      DTS:DTSID="{EDD85D10-CB81-479F-9206-38BA937BA96B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Tarea Flujo de datos"
@@ -45,7 +45,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."STG_CLIENTE"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."FACT_VENTA"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -84,61 +84,77 @@
                       refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[idcliente]"
                       cachedDataType="i4"
                       cachedName="idcliente"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[idcliente]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdCliente]"
                       lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idcliente]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Nombre]"
-                      cachedDataType="wstr"
-                      cachedLength="500"
-                      cachedName="Nombre"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Nombre]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Direccion]"
-                      cachedDataType="wstr"
-                      cachedLength="500"
-                      cachedName="Direccion"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Direccion]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Direccion]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Telefono]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Telefono"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Telefono]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Telefono]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Edad]"
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[idproducto]"
                       cachedDataType="i4"
-                      cachedName="Edad"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Edad]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Edad]" />
+                      cachedName="idproducto"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdProducto]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idproducto]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[idtienda]"
+                      cachedDataType="i4"
+                      cachedName="idtienda"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdTienda]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idtienda]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ganacias_netas]"
+                      cachedDataType="i4"
+                      cachedName="Ganacias_netas"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Ganancias_netas]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Ganacias_netas]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[porcentajedescuento]"
+                      cachedDataType="numeric"
+                      cachedName="porcentajedescuento"
+                      cachedPrecision="3"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Porcentajes_de_descuentos]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[porcentajedescuento]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[ventasporlocalidad]"
+                      cachedDataType="i4"
+                      cachedName="ventasporlocalidad"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Ventas_por_localidad]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[ventasporlocalidad]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[idcliente]"
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdDw_venta]"
                       dataType="i4"
-                      name="idcliente" />
+                      name="IdDw_venta" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre]"
-                      dataType="wstr"
-                      length="500"
-                      name="Nombre" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Direccion]"
-                      dataType="wstr"
-                      length="500"
-                      name="Direccion" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Telefono]"
-                      dataType="wstr"
-                      length="50"
-                      name="Telefono" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Edad]"
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdCliente]"
                       dataType="i4"
-                      name="Edad" />
+                      name="IdCliente" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdProducto]"
+                      dataType="i4"
+                      name="IdProducto" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdTienda]"
+                      dataType="i4"
+                      name="IdTienda" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Ganancias_netas]"
+                      dataType="numeric"
+                      name="Ganancias_netas"
+                      precision="11"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Porcentajes_de_descuentos]"
+                      dataType="numeric"
+                      name="Porcentajes_de_descuentos"
+                      precision="11"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Ventas_por_localidad]"
+                      dataType="numeric"
+                      name="Ventas_por_localidad"
+                      precision="11"
+                      scale="2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -181,19 +197,10 @@
                   description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT C.idcliente,
-       C.Nombre,
-       C.Direccion,
-       C.Telefono,
-       C.Edad
-  FROM BD_DatawareHouse.dbo.C_CLIENTE C
-       LEFT JOIN BD_DatawareHouse.dbo.DIM_CLIENTE SC
-          ON C.idcliente = SC.IdCliente
- WHERE     C.Nombre IS NOT NULL
-       AND C.Direccion IS NOT NULL
-       AND C.Telefono IS NOT NULL
-       AND C.Edad IS NOT NULL
-AND SC.IdCliente IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT v.idventa, v.idcliente, p.idproducto ,v.idtienda , 350 as Ganacias_netas ,10.5 as porcentajedescuento,2 as ventasporlocalidad
+  FROM BDVentas_ER.dbo.venta v
+  INNER JOIN BDVentas_ER.dbo.venta_producto VP ON VP.idventa =  v.idventa
+  inner join BDVentas_ER.dbo.producto p on p.idproducto = VP.idproducto</property>
                 <property
                   dataType="System.Int32"
                   description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
@@ -207,7 +214,7 @@ AND SC.IdCliente IS NULL</property>
                   description="Nombre de la tabla de la base de datos de origen."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."C_CLIENTE"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Especificar el modo de recuperar información de columnas externas"
@@ -231,6 +238,15 @@ AND SC.IdCliente IS NULL</property>
                   name="Salida de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idventa]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[idventa]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idventa]"
+                      name="idventa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idcliente]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
@@ -240,70 +256,85 @@ AND SC.IdCliente IS NULL</property>
                       name="idcliente"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
-                      length="500"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Nombre]"
-                      name="Nombre"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Direccion]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Direccion]"
-                      length="500"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Direccion]"
-                      name="Direccion"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Telefono]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Telefono]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Telefono]"
-                      name="Telefono"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Edad]"
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idproducto]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Edad]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Edad]"
-                      name="Edad"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[idproducto]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idproducto]"
+                      name="idproducto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idtienda]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[idtienda]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[idtienda]"
+                      name="idtienda"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Ganacias_netas]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Ganacias_netas]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Ganacias_netas]"
+                      name="Ganacias_netas"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[porcentajedescuento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[porcentajedescuento]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[porcentajedescuento]"
+                      name="porcentajedescuento"
+                      precision="3"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[ventasporlocalidad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[ventasporlocalidad]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[ventasporlocalidad]"
+                      name="ventasporlocalidad"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[idventa]"
+                      dataType="i4"
+                      name="idventa" />
+                    <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[idcliente]"
                       dataType="i4"
                       name="idcliente" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre]"
-                      dataType="wstr"
-                      length="500"
-                      name="Nombre" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Direccion]"
-                      dataType="wstr"
-                      length="500"
-                      name="Direccion" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Telefono]"
-                      dataType="wstr"
-                      length="50"
-                      name="Telefono" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Edad]"
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[idproducto]"
                       dataType="i4"
-                      name="Edad" />
+                      name="idproducto" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[idtienda]"
+                      dataType="i4"
+                      name="idtienda" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Ganacias_netas]"
+                      dataType="i4"
+                      name="Ganacias_netas" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[porcentajedescuento]"
+                      dataType="numeric"
+                      name="porcentajedescuento"
+                      precision="3"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[ventasporlocalidad]"
+                      dataType="i4"
+                      name="ventasporlocalidad" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -312,33 +343,42 @@ AND SC.IdCliente IS NULL</property>
                   name="Salida de error de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idventa]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idventa]"
+                      name="idventa" />
+                    <outputColumn
                       refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idcliente]"
                       dataType="i4"
                       lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idcliente]"
                       name="idcliente" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
-                      dataType="wstr"
-                      length="500"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Nombre]"
-                      name="Nombre" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Direccion]"
-                      dataType="wstr"
-                      length="500"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Direccion]"
-                      name="Direccion" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Telefono]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Telefono]"
-                      name="Telefono" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Edad]"
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idproducto]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Edad]"
-                      name="Edad" />
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idproducto]"
+                      name="idproducto" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idtienda]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[idtienda]"
+                      name="idtienda" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Ganacias_netas]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Ganacias_netas]"
+                      name="Ganacias_netas" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[porcentajedescuento]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[porcentajedescuento]"
+                      name="porcentajedescuento"
+                      precision="3"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ventasporlocalidad]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ventasporlocalidad]"
+                      name="ventasporlocalidad" />
                     <outputColumn
                       refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
@@ -383,7 +423,7 @@ AND SC.IdCliente IS NULL</property>
         <NodeLayout
           Size="180,42"
           Id="Package\Tarea Flujo de datos"
-          TopLeft="211,193" />
+          TopLeft="276,225" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -395,25 +435,37 @@ AND SC.IdCliente IS NULL</property>
         <NodeLayout
           Size="179,42"
           Id="Package\Tarea Flujo de datos\Origen de ADO NET"
-          TopLeft="229,127" />
+          TopLeft="294,233" />
         <NodeLayout
           Size="183,42"
           Id="Package\Tarea Flujo de datos\Destino de ADO NET"
-          TopLeft="602,132" />
+          TopLeft="681,245" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
-          TopLeft="408,150.5">
+          TopLeft="473,254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="194,0"
+              EndConnector="208,12"
               Start="0,0"
-              End="186.5,0">
+              End="200.5,12">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="186.5,0" />
+                    End="100,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100,0"
+                    Point2="104,0"
+                    Point3="104,4" />
+                  <mssgle:LineSegment
+                    End="104,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104,8"
+                    Point2="104,12"
+                    Point3="108,12" />
+                  <mssgle:LineSegment
+                    End="200.5,12" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
